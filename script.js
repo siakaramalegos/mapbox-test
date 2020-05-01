@@ -87,12 +87,12 @@ function renderMap() {
       .setHTML(html)
       .addTo(map);
 
-    document.querySelector('#zoom-in').onclick = function() {
+    [].slice.call(document.querySelectorAll('#zoom-in')).pop().onclick = function () {
       map.zoomTo(11, { duration: 9000 });
-    }
-    document.querySelector('#zoom-out').onclick = function () {
+    };
+    [].slice.call(document.querySelectorAll('#zoom-out')).pop().onclick = function () {
       map.zoomTo(initialZoom, { duration: 9000 });
-    }
+    };
   });
 
   // Change the cursor to a pointer when the mouse is over the symbols layer.
