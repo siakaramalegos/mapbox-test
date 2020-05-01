@@ -9,4 +9,5 @@ Here are some of the sources I used for building this sample:
   - https://docs.mapbox.com/mapbox-gl-js/example/popup-on-click/
   - https://docs.mapbox.com/mapbox-gl-js/example/center-on-symbol/
   - https://docs.mapbox.com/mapbox-gl-js/example/change-building-color-based-on-zoom-level/
+  - https://docs.mapbox.com/mapbox-gl-js/example/style-ocean-depth-data/
 
