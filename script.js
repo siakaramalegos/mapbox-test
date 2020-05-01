@@ -1,6 +1,6 @@
 mapboxgl.accessToken =
   "pk.eyJ1Ijoic2lha2FyYW1hbGVnb3MiLCJhIjoiY2s5bXo4dXVrMTZsczNrcGhremVjdmprYSJ9.IdrQnWUp4D1wBnWxh6T9ow";
-
+const initialZoom = 6
 const geojson = {
   type: "FeatureCollection",
   features: [
@@ -40,14 +40,12 @@ function getCenter(geojson) {
   centerLongs = (Math.max(...longs) - Math.min(...longs)) / 2 + Math.min(...longs)
   return [centerLats, centerLongs]
 }
-console.log(getCenter(geojson));
-
 
 const map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mapbox/outdoors-v11",
   center: getCenter(geojson),
-  zoom: 6
+  zoom: initialZoom
 });
 const nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'bottom-right');
@@ -91,6 +89,9 @@ function renderMap() {
 
     document.querySelector('#zoom-in').onclick = function() {
       map.zoomTo(11, { duration: 9000 });
+    }
+    document.querySelector('#zoom-out').onclick = function () {
+      map.zoomTo(initialZoom, { duration: 9000 });
     }
   });
 
